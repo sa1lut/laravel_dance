@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('client_subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('login', 50)->unique();
-            $table->string('password', 255)->index();
+
+            $table->timestamp('date_purchase')->useCurrent();
+            $table->timestamp('date_end');
+
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('subscription_id');
+
             $table->timestamps();
-            $table->unsignedBigInteger('role_id')->index();
         });
     }
 
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('client_subscriptions');
     }
 };

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\LessonController;
+use App\Http\Controllers\Lesson;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,13 @@ use App\Http\Controllers\LessonController;
 
 Route::get('/', [MainController::class, 'index'])->name('main.index');
 
-Route::get('/lessons', [LessonController::class, 'index'])->name('lesson.index');
+Route::group(['namespace' => 'Lesson'], function() {
+    Route::get('/lessons', 'IndexController')->name('lesson.index');
+    Route::get('/lessons/create', 'CreateController')->name('lesson.create');
+    Route::post('/lessons', 'StoreController')->name('lesson.store');
+    Route::get('/lessons/{lesson}', 'ShowController')->name('lesson.show');
+    Route::get('/lessons/{lesson}/edit', 'EditController')->name('lesson.edit');
+    Route::patch('/lessons/{lesson}', 'UpdateController')->name('lesson.update');
+    Route::delete('/lessons/{lesson}', 'DestroyController')->name('lesson.delete');
+});
+

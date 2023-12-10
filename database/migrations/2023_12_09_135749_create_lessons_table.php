@@ -16,9 +16,7 @@ return new class extends Migration
             $table->string('title', 30);
             $table->string('image');
             $table->string('direction');
-            $table->unsignedBigInteger('teacher_id')->index();
-
-            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

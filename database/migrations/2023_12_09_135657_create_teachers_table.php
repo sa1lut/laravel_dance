@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('telephone', 10);
             $table->string('image');
             $table->unsignedBigInteger('customer_id')->index();
-
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
