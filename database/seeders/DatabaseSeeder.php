@@ -29,5 +29,31 @@ class DatabaseSeeder extends Seeder
             'password' => 'admin',
             'role_id' => 1
         ]);
+        \App\Models\Customer::factory()->create([
+            'login' => 'asd',
+            'password' => 'asd',
+            'role_id' => 2
+        ]);
+        \App\Models\Customer::factory()->create([
+            'login' => 'zxc',
+            'password' => 'zxc',
+            'role_id' => 2
+        ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'petya',
+            'surname' => 'pupkin',
+            'birthday' => '2000-06-06',
+            'telephone' => '1234567890',
+            'image' => 'petya.png',
+            'customer_id' => 2,
+        ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'vasya',
+            'surname' => 'pupkin',
+            'birthday' => '2000-06-06',
+            'telephone' => '1234567890',
+            'image' => 'petya.png',
+            'customer_id' => 3,
+        ]);
     }
 }

@@ -27,4 +27,4 @@
             <button type="button" class="btn btn-outline-primary me-2"><a href="../login.php">Войти</a></button>
         </div>
         <?php endif; ?> -->
-        </header>
+</header>

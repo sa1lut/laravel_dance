@@ -15,15 +15,24 @@ use App\Http\Controllers\Lesson;
 |
 */
 
-Route::get('/', [MainController::class, 'index'])->name('main.index');
+Route::get('/', 'MainController')->name('main.index');
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'IndexController')->name('admin.index');
+    Route::group(['namespace' => 'Lesson'], function() {
+        Route::get('/lessons', 'IndexController')->name('admin.lesson.index');
+        Route::get('/lessons/create', 'CreateController')->name('admin.lesson.create');
+        Route::post('/lessons', 'StoreController')->name('admin.lesson.store');
+        Route::get('/lessons/{lesson}/edit', 'EditController')->name('admin.lesson.edit');
+        Route::patch('/lessons/{lesson}', 'UpdateController')->name('admin.lesson.update');
+    });
+    
+});
 
 Route::group(['namespace' => 'Lesson'], function() {
     Route::get('/lessons', 'IndexController')->name('lesson.index');
-    Route::get('/lessons/create', 'CreateController')->name('lesson.create');
-    Route::post('/lessons', 'StoreController')->name('lesson.store');
     Route::get('/lessons/{lesson}', 'ShowController')->name('lesson.show');
-    Route::get('/lessons/{lesson}/edit', 'EditController')->name('lesson.edit');
-    Route::patch('/lessons/{lesson}', 'UpdateController')->name('lesson.update');
-    Route::delete('/lessons/{lesson}', 'DestroyController')->name('lesson.delete');
+    
+    // Route::delete('/lessons/{lesson}', 'DestroyController')->name('lesson.delete');
 });
 

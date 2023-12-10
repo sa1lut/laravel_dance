@@ -14,8 +14,8 @@ class Teacher extends Model
         return $this->belongsToMany(Lesson::class);
     }
 
-    public function subscriptions()
-    {
-        return $this->hasMany(Subscription::class);
-    }
+    // public function subscriptions()
+    // {
+    //     return $this->hasMany(Subscription::class);
+    // }
 }

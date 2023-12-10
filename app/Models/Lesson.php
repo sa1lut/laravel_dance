@@ -18,6 +18,6 @@ class Lesson extends Model
 
     public function subscriptions()
     {
-        return $this->hasMany(Subscription::class);
+        return $this->belongsToMany(Subscription::class);
     }
 }

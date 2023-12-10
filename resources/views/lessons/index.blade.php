@@ -5,7 +5,6 @@
 @section('content')
 <main class="main">
     <div class="container">
-        <a href="{{ route('lesson.create') }}" class="btn btn-primary">Добавить</a>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             @foreach($lessons as $lesson)
             <div class="col">
