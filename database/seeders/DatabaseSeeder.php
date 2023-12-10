@@ -24,19 +24,19 @@ class DatabaseSeeder extends Seeder
                 'title' => $title
             ]);
         }
-        \App\Models\Customer::factory()->create([
+        \App\Models\User::factory()->create([
             'login' => 'admin',
-            'password' => 'admin',
+            'password' => bcrypt('admin'),
             'role_id' => 1
         ]);
-        \App\Models\Customer::factory()->create([
+        \App\Models\User::factory()->create([
             'login' => 'asd',
-            'password' => 'asd',
+            'password' => bcrypt('admin'),
             'role_id' => 2
         ]);
-        \App\Models\Customer::factory()->create([
+        \App\Models\User::factory()->create([
             'login' => 'zxc',
-            'password' => 'zxc',
+            'password' => bcrypt('admin'),
             'role_id' => 2
         ]);
         \App\Models\Teacher::factory()->create([

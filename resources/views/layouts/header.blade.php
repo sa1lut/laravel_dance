@@ -11,20 +11,27 @@
             <li><a href="#" class="nav-link px-2">придумать</a></li>
             <li><a href="#" class="nav-link px-2">О нас</a></li>
         </ul>
-        
-        <!-- <?php if(isset($_SESSION['username'])): ?>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><?=$_SESSION['username']?></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="../logout.php">Выход</a></li>
-              </ul>
-            </li>
-        </ul>
-        <?php else: ?>
-        </ul>
-        <div class="col-md-3 text-end">
+
+        @guest
+            <a href="{{ route('auth.login') }}">
+                <button type="button" class="btn btn-sm">
+                    Вход
+                </button>
+            </a>
+            <a href="{{ route('auth.register') }}">
+                <button type="button" class="btn btn-sm">
+                    Регистрация
+                </button>
+            </a>
+        @endguest
+        @auth
+            <a href="{{ route('auth.logout') }}">
+                <button type="button" class="btn btn-sm">
+                    Выйти
+                </button>
+            </a>
+        @endauth
+        <!-- <div class="col-md-3 text-end">
             <button type="button" class="btn btn-outline-primary me-2"><a href="../login.php">Войти</a></button>
-        </div>
-        <?php endif; ?> -->
+        </div> -->
 </header>
