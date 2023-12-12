@@ -12,10 +12,14 @@ class UpdateController extends Controller
     {
         $data = request()->validate([
             'title'=> 'string',
-            'image'=> 'string',
+            'image'=> 'file',
             'direction'=> 'string',
         ]);
+        if (request()->hasFile('image')) {
+            $path = request()->file('image')->store('lesson', 'public');
+            $data['image'] = $path;
+        }
         $lesson->update($data);
-        return redirect()->route('admin.lesson.edit', $lesson->id);
+        return redirect()->route('admin.lesson.index', $lesson->id);
     }
 }

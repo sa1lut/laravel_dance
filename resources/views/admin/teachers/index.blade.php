@@ -1,8 +1,8 @@
 @extends('admin.index')
 
-@section('title', 'Занятия')
+@section('title', 'Преподаватели')
 @section('add')
-<a href="{{ route('admin.lesson.create') }}" class="btn btn-success float-sm-right">Добавить</a>
+<a href="{{ route('admin.teacher.create') }}" class="btn btn-success float-sm-right">Добавить</a>
 @endsection
 
 @section('content')
@@ -16,21 +16,26 @@
                   <thead>
                     <tr>
                       <th>id</th>
-                      <th>Название</th>
-                      <th>Направление</th>
+                      <th>Фамилия</th>
+                      <th>Имя</th>
+                      <th>Дата рождения</th>
+                      <th>Телефон</th>
+                      <th>Действия</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($lessons as $lesson)
+                    @foreach($teachers as $teacher)
                         <tr data-widget="expandable-table" aria-expanded="false">
-                            <td>{{ $lesson->id }}</td>
-                            <td>{{ $lesson->title }}</td>
-                            <td>{{ $lesson->direction }}</td>
-                            <td><a href="{{ route('admin.lesson.edit', $lesson->id) }}" class="card-link">Изменить</a></td>
+                            <td>{{ $teacher->id }}</td>
+                            <td>{{ $teacher->surname }}</td>
+                            <td>{{ $teacher->name }}</td>
+                            <td>{{ $teacher->birthday }}</td>
+                            <td>{{ $teacher->telephone }}</td>
+                            <td><a href="{{ route('admin.teacher.edit', $teacher->id) }}" class="card-link">Изменить</a></td>
                         </tr>
                         <tr class="expandable-body">
                             <td colspan="6">
-                                <img src="{{ asset('/storage/' . $lesson->image) }}" class="card-img-top" alt="...">
+                                <img src="{{ asset('/storage/' . $teacher->image) }}" class="card-img-top" alt="...">
                             </td>
                         </tr>
                     @endforeach

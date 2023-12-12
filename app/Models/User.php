@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'login',
         'password',
     ];
 
@@ -49,13 +49,16 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function teachers() 
-    {
-        return $this->hasMany(Teacher::class);
-    }
-
     public function clients() 
     {
         return $this->hasMany(Client::class);
+    }
+
+    public function getName() {
+        if (auth()->user()->role->title === 'client'){
+            return Client::where('user_id', '=', auth()->user()->id)->value('name');
+        };
+
+        return 'Администратор';
     }
 }

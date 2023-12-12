@@ -12,14 +12,16 @@ class StoreController extends Controller
     {
         $data = request()->validate([
             'title'=> 'string',
-            'image'=> 'string',
+            'image'=> 'file',
             'direction'=> 'string',
         ]);
+        if (request()->hasFile('image')) {
+            $path = request()->file('image')->store('lesson', 'public');
+            $data['image'] = $path;
+        }
         $teacher_id = request('teachers');
-        // dd($teacher_id);
         $lesson = Lesson::create($data);
 
-        // dd($lesson_teacher);
         $lesson->teachers()->attach($teacher_id);
 
         return redirect()->route('admin.lesson.index');

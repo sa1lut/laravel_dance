@@ -21,6 +21,7 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Войти</button>
+            <a href="{{ route('auth.register') }}" class="btn">Регистрация</a>
         </form>
     </div>
 </main>

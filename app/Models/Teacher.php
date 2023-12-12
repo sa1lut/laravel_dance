@@ -9,6 +9,8 @@ class Teacher extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function lessons()
     {
         return $this->belongsToMany(Lesson::class);

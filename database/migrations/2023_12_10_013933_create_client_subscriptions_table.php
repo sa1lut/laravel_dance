@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('client_subscriptions', function (Blueprint $table) {
             $table->id();
 
-            $table->timestamp('date_purchase')->useCurrent();
-            $table->timestamp('date_end');
+            $table->date('date_purchase')->useCurrent();
+            $table->date('date_end');
 
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('subscription_id');

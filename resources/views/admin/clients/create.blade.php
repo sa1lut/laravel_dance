@@ -1,10 +1,11 @@
-@extends('layouts.layout')
+@extends('admin.layouts.layout')
 
-@section('title', 'Регистрация')
+@section('title', 'Добавить клиента')
+
 @section('content')
 <main class="main">
     <div class="container">
-        <form class="row g-3" action="{{ route('auth.register') }}" method="post">
+        <form class="row g-3" action="{{ route('admin.client.store') }}" method="post">
             @csrf
             <div class="col-md-6">
                 <label for="login" class="form-label">Логин</label>
@@ -44,9 +45,8 @@
                 </div>
             </div>
             
-            <button type="submit" class="w-50 mx-auto btn btn-primary">Зарегистрироватся</button>
+            <button type="submit" class="w-50 mx-auto btn btn-primary">Добавить</button>
         </form>
     </div>
 </main>
-    
 @endsection

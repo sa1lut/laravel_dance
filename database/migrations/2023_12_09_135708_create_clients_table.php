@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('surname', 75);
-            $table->timestamp('birthday')->useCurrent();
+            $table->date('birthday')->useCurrent();
             $table->string('telephone', 10);
-            $table->unsignedBigInteger('customer_id')->index();
+            $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
         });
     }

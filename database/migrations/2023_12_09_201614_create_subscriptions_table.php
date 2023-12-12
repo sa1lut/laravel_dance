@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('period')->default(1);
             $table->text('description');
             $table->integer('count')->default(3);
+            $table->unsignedBigInteger('lesson_id')->index();
             $table->timestamps();
         });
     }

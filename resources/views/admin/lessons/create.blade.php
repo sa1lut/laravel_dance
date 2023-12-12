@@ -5,7 +5,7 @@
 @section('content')
 <main class="main">
     <div class="container">
-        <form class="row g-3" action="{{ route('admin.lesson.store') }}" method="post">
+        <form class="row g-3" action="{{ route('admin.lesson.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="col-md-6">
                 <label for="title" class="form-label">Название</label>
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-6">
                 <label for="image" class="form-label">Изображение</label>
-                <input type="text" class="form-control" id="image" name="image" placeholder="Изображение">
+                <input type="file" class="form-control" id="image" name="image" placeholder="Изображение">
             </div>
             <div class="col-12">
                 <label for="direction" class="form-label">Направление</label>

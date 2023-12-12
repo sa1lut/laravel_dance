@@ -14,18 +14,20 @@ class LoginController extends Controller
 
     public function login(Request $request) {
         if (Auth::check()) {
-            return redirect(route('index'));
+            return redirect(route('main.index'));
         }
 
-        $request->validate([
-            'login' => 'required', 
-            'password' => 'required'
-        ]);
+        // $request->validate([
+        //     'login' => 'required', 
+        //     'password' => 'required'
+        // ]);
         $formFields = $request->only(['login', 'password']);
+        // dd($formFields);
         if (Auth::attempt($formFields)) {
             $request->session()->regenerate();
             
             return redirect()->intended(route('main.index'));
         }
+        return view('auth.login');
     }
 }

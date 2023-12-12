@@ -1,11 +1,11 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Добавить занятие')
+@section('title', 'Изменить занятие')
 
 @section('content')
 <main class="main">
     <div class="container">
-        <form class="row g-3" action="{{ route('admin.lesson.update', $lesson->id) }}" method="post">
+        <form class="row g-3" action="{{ route('admin.lesson.update', $lesson->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="col-md-6">
@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-6">
                 <label for="image" class="form-label">Изображение</label>
-                <input type="text" class="form-control" id="image" name="image" placeholder="Изображение" value="{{ $lesson->image }}">
+                <input type="file" class="form-control" id="image" name="image" placeholder="Изображение" value="{{ $lesson->image }}">
             </div>
             <div class="col-12">
                 <label for="direction" class="form-label">Направление</label>

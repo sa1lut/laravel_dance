@@ -12,7 +12,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img class="bd-placeholder-img" src="{{ asset('img/img-main1.png') }}" alt="...">
+      <img class="bd-placeholder-img" src="{{ asset('img/main/img-main1.png') }}" alt="...">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -22,9 +22,9 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" src="{{ asset('img/img-main2.png') }}" alt="...">
+        <img class="bd-placeholder-img" src="{{ asset('img/main/img-main2.png') }}" alt="...">
         <div class="container">
-          <div class="carousel-caption">
+          <div class="carousel-caption" style="color: black;">
             <h1>Another example headline.</h1>
             <p>Some representative placeholder content for the second slide of the carousel.</p>
             <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
@@ -32,9 +32,9 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img class="bd-placeholder-img" src="{{ asset('img/img-main3.png') }}" alt="...">
+        <img class="bd-placeholder-img" src="{{ asset('img/main/img-main3.png') }}" alt="...">
         <div class="container">
-          <div class="carousel-caption text-end">
+          <div class="carousel-caption text-end" style="color: black;">
             <h1>One more for good measure.</h1>
             <p>Some representative placeholder content for the third slide of this carousel.</p>
             <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>

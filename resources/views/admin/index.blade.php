@@ -3,5 +3,9 @@
 @section('title', 'Главная')
 
 @section('content')
-<h5>Добро пожаловать в Административную панель</h5>
+<main class="main">
+    <div class="container">
+        <h5>Добро пожаловать в Административную панель</h5>
+    </div>
+</main>
 @endsection

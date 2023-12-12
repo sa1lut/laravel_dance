@@ -13,6 +13,14 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-header">Таблицы</li>
           <li class="nav-item">
+            <a href="{{ route('admin.teacher.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Преподаватели
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.lesson.index') }}" class="nav-link">
               <i class="nav-icon fas fa-bars"></i>
               <p>
@@ -21,10 +29,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <a href="{{ route('admin.client.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                Gallery
+                Клиенты
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.subscription.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Абонементы
               </p>
             </a>
           </li>

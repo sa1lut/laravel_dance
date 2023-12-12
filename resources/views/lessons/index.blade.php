@@ -9,7 +9,7 @@
             @foreach($lessons as $lesson)
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                <img src="{{ asset('img/img-main1.png') }}" class="card-img-top" alt="...">
+                <img src="{{ asset( $lesson->image) }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $lesson->title }}</h5>
                         <p class="card-text">{{ $lesson->direction }}</p>
