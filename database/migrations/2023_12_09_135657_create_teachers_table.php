@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('surname', 75);
             $table->date('birthday')->useCurrent();
             $table->string('telephone', 10);
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

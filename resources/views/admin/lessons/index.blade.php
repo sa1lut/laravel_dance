@@ -18,6 +18,7 @@
                       <th>id</th>
                       <th>Название</th>
                       <th>Направление</th>
+                      <th>Действия</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -30,7 +31,7 @@
                         </tr>
                         <tr class="expandable-body">
                             <td colspan="6">
-                                <img src="{{ asset('/storage/' . $lesson->image) }}" class="card-img-top" alt="...">
+                                <img src="{{ $lesson->image }}" class="card-img-top" alt="...">
                             </td>
                         </tr>
                     @endforeach

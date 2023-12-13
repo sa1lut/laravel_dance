@@ -61,4 +61,12 @@ class User extends Authenticatable
 
         return 'Администратор';
     }
+    
+    public function getId() {
+        if (auth()->user()->role->title === 'client'){
+            return Client::where('user_id', '=', auth()->user()->id)->value('id');
+        };
+
+        return null;
+    }
 }

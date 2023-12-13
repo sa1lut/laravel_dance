@@ -39,14 +39,24 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('admin'),
         //     'role_id' => 2
         // ]);
-        // \App\Models\Teacher::factory()->create([
-        //     'name' => 'petya',
-        //     'surname' => 'pupkin',
-        //     'birthday' => '2000-06-06',
-        //     'telephone' => '1234567890',
-        //     'image' => 'petya.png',
-        //     'user_id' => 2,
-        // ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'petya',
+            'surname' => 'pupkin',
+            'birthday' => '2000-06-06',
+            'telephone' => '1234567890',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Народный',
+            'image' => '',
+            'direction' => 'Народный',
+        ]);
+        \App\Models\Subscription::factory()->create([
+            'title' => 'Для начинающих',
+            'price' => 1000,
+            'period' => 3,
+            'description' => 'Подходит для людей без опыта или которые хотят стать танцорами',
+            'lesson_id' => 1,
+        ]);
         // \App\Models\Teacher::factory()->create([
         //     'name' => 'vasya',
         //     'surname' => 'pupkin',

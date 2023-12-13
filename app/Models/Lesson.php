@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Lesson extends Model
 {
@@ -18,6 +19,14 @@ class Lesson extends Model
 
     public function subscriptions()
     {
-        return $this->belongsToMany(Subscription::class);
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function getImageAttribute() {
+        if (!$this->attributes['image']) {
+            return '/img/lesson/no_image.png';
+        }
+
+        return Storage::url($this->attributes['image']);
     }
 }

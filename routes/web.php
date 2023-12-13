@@ -17,6 +17,17 @@ use App\Http\Controllers\Lesson;
 */
 
 Route::get('/', 'MainController')->name('main.index');
+Route::get('/contact', 'MainController@contact')->name('contact.index');
+Route::get('/about', 'MainController@about')->name('about.index');
+
+Route::group(['namespace' => 'Client'], function() {
+    Route::get('/my_id={client}', 'IndexController')->name('client.index');
+    Route::get('/my_id={client}/edit', 'EditController')->name('client.edit');
+    Route::patch('my_id={client}/update', 'UpdateController')->name('client.update');
+    Route::get('/my_id={client}/subscription', 'SubscriptionController')->name('clients.subscription');
+    Route::get('/buySubscription/lesson_id={lesson}/subscription_id={subscription}', 'CreateBuyController')->name('create.buy');
+    Route::post('/buySubscription/{subscription}', 'StoreBuyController')->name('store.buy');
+});
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/', 'IndexController')->name('admin.index');

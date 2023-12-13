@@ -35,7 +35,7 @@
                         </tr>
                         <tr class="expandable-body">
                             <td colspan="6">
-                                <img src="{{ asset('/storage/' . $teacher->image) }}" class="card-img-top" alt="...">
+                                <img src="{{ $teacher->image }}" class="card-img-top" alt="...">
                             </td>
                         </tr>
                     @endforeach

@@ -1,20 +1,20 @@
 @extends('admin.layouts.layout')
 
-@section('title', 'Добавить занятие')
+@section('title', 'Изменить абонемент')
 
 @section('content')
 <main class="main">
     <div class="container">
-        <form class="row g-3" action="{{ route('admin.teacher.update', $teacher->id) }}" method="post" enctype="multipart/form-data">
+        <form class="row g-3" action="{{ route('admin.subscription.update', $subscription->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="col-md-6">
                 <label for="surname" class="form-label">Фамилия</label>
-                <input type="text" class="form-control" id="surname" name="surname" value="{{ $teacher->name }}" placeholder="Фамилия">
+                <input type="text" class="form-control" id="surname" name="surname" value="{{ $subscription->name }}" placeholder="Фамилия">
             </div>
             <div class="col-md-6">
                 <label for="name" class="form-label">Имя</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $teacher->surname }}" placeholder="Имя">
+                <input type="text" class="form-control" id="name" name="name" value="{{ $subscription->surname }}" placeholder="Имя">
             </div>
             <div class="col-md-6">
                 <label for="birthday" class="form-label">Дата рождения</label>

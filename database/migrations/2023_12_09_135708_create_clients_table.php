@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('telephone', 10);
             $table->unsignedBigInteger('user_id')->index();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

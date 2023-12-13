@@ -4,7 +4,7 @@
 
 @section('content')
 <main class="main">
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div id="myCarousel" class="carousel slide mb-6 bg-secondary " data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -51,6 +51,29 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <div class="container">
+    <h2 class="section-title text-center fs-1 m-5">
+        <span>Занятия</span>
+    </h2>
+  <hr class="featurette-divider">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach($lessons as $lesson)
+            <div class="col">
+                <div class="card">
+                <img src="{{ $lesson->image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $lesson->title }}</h5>
+                        <p class="card-text">{{ $lesson->direction }}</p>
+                        <a href="{{ route('lesson.show', $lesson->id) }}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    <hr class="featurette-divider">
+
+    </div>
 </main>
 
 @endsection
