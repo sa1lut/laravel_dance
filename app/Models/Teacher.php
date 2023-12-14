@@ -14,7 +14,7 @@ class Teacher extends Model
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class);
+        return $this->belongsToMany(Lesson::class, 'lesson_teacher', 'teacher_id', 'lesson_id');
     }
 
     public function getImageAttribute() {

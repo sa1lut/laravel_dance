@@ -11,13 +11,14 @@ class Client extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function users()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function clientSubscriptions()
     {
-        return $this->hasMany(ClientSubscription::class);
+        return $this->hasMany(ClientSubscription::class, 'client_id', 'id');
     }
+
 }

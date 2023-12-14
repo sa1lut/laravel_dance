@@ -48,10 +48,16 @@ class DatabaseSeeder extends Seeder
         \App\Models\Lesson::factory()->create([
             'title' => 'Народный',
             'image' => '',
-            'direction' => 'Народный',
         ]);
         \App\Models\Subscription::factory()->create([
             'title' => 'Для начинающих',
+            'price' => 1000,
+            'period' => 3,
+            'description' => 'Подходит для людей без опыта или которые хотят стать танцорами',
+            'lesson_id' => 1,
+        ]);
+        \App\Models\Subscription::factory()->create([
+            'title' => 'Для начинающих2',
             'price' => 1000,
             'period' => 3,
             'description' => 'Подходит для людей без опыта или которые хотят стать танцорами',

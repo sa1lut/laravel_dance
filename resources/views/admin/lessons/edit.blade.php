@@ -16,9 +16,17 @@
                 <label for="image" class="form-label">Изображение</label>
                 <input type="file" class="form-control" id="image" name="image" placeholder="Изображение" value="{{ $lesson->image }}">
             </div>
-            <div class="col-12">
-                <label for="direction" class="form-label">Направление</label>
-                <textarea class="form-control" id="direction" name="direction" placeholder="Описание">{{ $lesson->direction }}</textarea>
+            <div class="form-group">
+                <label>Преподаватели</label>
+                <select class="form-control select2bs4" style="width: 100%;" name="teachers[]" multiple>
+                @foreach($teachers as $teacher)
+                    <option
+                    @foreach($lesson->teachers as $lessonTeacher)
+                        {{ $teacher->id === $lessonTeacher->id ? 'selected' : ''}}
+                    @endforeach
+                     value="{{ $teacher->id}}">{{ $teacher->surname }} {{ $teacher->name }}</option>
+                @endforeach
+                </select>
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Изменить</button>

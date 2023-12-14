@@ -17,10 +17,13 @@ return new class extends Migration
             $table->unsignedDecimal('price', 6)->default(0);
             $table->integer('period')->default(1);
             $table->text('description');
-            $table->unsignedBigInteger('lesson_id')->index();
-            $table->timestamps();
+            $table->unsignedBigInteger('lesson_id');
+            
+            $table->index('lesson_id', 'subscriptions_lesson_idx');
 
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('lesson_id', 'subscriptions_lesson_idx')->on('lessons')->references('id')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 

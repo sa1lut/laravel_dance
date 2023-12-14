@@ -14,12 +14,12 @@ class Lesson extends Model
 
     public function teachers()
     {
-        return $this->belongsToMany(Teacher::class);
+        return $this->belongsToMany(Teacher::class, 'lesson_teacher', 'lesson_id', 'teacher_id');
     }
 
     public function subscriptions()
     {
-        return $this->hasMany(Subscription::class);
+        return $this->hasMany(Subscription::class, 'lesson_id', 'id');
     }
 
     public function getImageAttribute() {

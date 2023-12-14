@@ -13,11 +13,12 @@ class Subscription extends Model
 
     public function clientSubscriptions()
     {
-        return $this->hasMany(ClientSubscription::class);
+        return $this->hasMany(ClientSubscription::class, 'subscription_id', 'id');
     }
 
     public function lessons() 
     {
-        return $this->belongsToMany(Lesson::class);
+        return $this->belongsTo(Lesson::class, 'lesson_id', 'id');
     }
+
 }

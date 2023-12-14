@@ -17,10 +17,14 @@ return new class extends Migration
             $table->string('surname', 75);
             $table->date('birthday')->useCurrent();
             $table->string('telephone', 10);
-            $table->unsignedBigInteger('user_id')->index();
-            $table->timestamps();
+            $table->unsignedBigInteger('user_id');
+            
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->index('user_id', 'client_user_idx');
+
+            $table->foreign('user_id', 'client_user_idx_fk')->on('users')->references('id')->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 

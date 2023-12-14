@@ -2,31 +2,58 @@
 
 @section('title', $lesson->title)
 
+
 @section('content')
 <main class="main">
     <div class="container">
-        <div> {{ $lesson->title }}</div>
-        <div> {{ $lesson->direction }}</div>    
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            @foreach($subscriptions as $subscription)
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3">
-                            <h4 class="my-0 fw-normal">{{ $subscription->title }}</h4>
+        <div class="row justify-content-center mb-3">
+            <div class="col"></div>
+            <div class="col align-self-center">
+                <h1 class="section-title text-center fs-1"> {{ $lesson->title }}</h1>
+                <img src="{{ $lesson->image }}" alt="">
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <hr class="featurette-divider">
+        <h2 class="section-title text-center fs-1 m-5">
+            <span>Абонементы</span>
+        </h2>
+        <hr class="featurette-divider">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach($subscriptions as $subscription)
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title mb-2">{{ $subscription->title }}</h5>
+                                <p class="card-text pricing-card-title">{{ $subscription->price }} ₽</p>
+                                <p class="card-text">{{ $subscription->period }}/месяц</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{{ route('create.buy', [$lesson->id, $subscription->id]) }}" class="w-100 btn btn-lg btn-primary">Добавить</a>
+                            </div>
                         </div>
+                    </div>
+                @endforeach
+            </div>
+
+        <hr class="featurette-divider">
+        <h2 class="section-title text-center fs-1 m-5">
+            <span>Преподаватели</span>
+        </h2>
+        <hr class="featurette-divider">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach($teachers as $teacher)
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ $teacher->image }}" class="card-img" alt="...">
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">{{ $subscription->price }} ₽</h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                        <li>{{ $subscription->count }} занятий</li>
-                        <li>{{ $subscription->period }} месяца</li>
-                        </ul>
-                         <a href="{{ route('create.buy', [$lesson->id, $subscription->id]) }}" class="w-100 btn btn-lg btn-primary">Добавить</a>
+                        <h5 class="card-title">{{ $teacher->surname }} {{ $teacher->name }}</h5>
                     </div>
                 </div>
-            @endforeach
-        </div>
-        
-      </div>    
+                @endforeach
+            </div>
+        </div>    
     </div>
 </main>
 @endsection

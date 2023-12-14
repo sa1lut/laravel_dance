@@ -20,8 +20,11 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('subscription_id');
 
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
-            $table->foreign('subscription_id')->references('id')->on('subscriptions')->onDelete('cascade');
+            $table->index('client_id', 'client_subscriptions_client_idx');
+            $table->index('subscription_id', 'lesson_teacher_subscription_idx');
+
+            $table->foreign('client_id', 'client_subscriptions_client_idx')->on('clients')->references('id')->onDelete('cascade');
+            $table->foreign('subscription_id', 'lesson_teacher_subscription_idx')->on('subscriptions')->references('id')->onDelete('cascade');
             
 
             $table->timestamps();

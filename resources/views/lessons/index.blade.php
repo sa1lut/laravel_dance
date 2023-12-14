@@ -12,7 +12,6 @@
                 <img src="{{ $lesson->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $lesson->title }}</h5>
-                        <p class="card-text">{{ $lesson->direction }}</p>
                         <a href="{{ route('lesson.show', $lesson->id) }}" class="btn btn-primary">Подробнее</a>
                     </div>
                 </div>

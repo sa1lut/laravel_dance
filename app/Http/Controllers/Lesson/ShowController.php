@@ -12,6 +12,9 @@ class ShowController extends Controller
     public function __invoke(Lesson $lesson)
     {
         $subscriptions = $lesson->subscriptions;
-        return view('lessons.show', compact('lesson', 'subscriptions'));
+        // $lesson = $lesson::with('teachers')->get();
+        $teachers = $lesson->teachers;
+        // dd($teachers);
+        return view('lessons.show', compact('lesson', 'subscriptions', 'teachers'));
     }
 }

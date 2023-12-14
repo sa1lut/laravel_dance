@@ -16,7 +16,6 @@ class StoreController extends Controller
             'price'=> 'integer',
             'period'=> 'integer',
             'description'=> 'string',
-            'count'=> 'integer',
             'lesson_id'=> 'integer',
         ]);
         // dd(request());

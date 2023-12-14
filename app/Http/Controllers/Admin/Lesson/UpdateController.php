@@ -13,13 +13,14 @@ class UpdateController extends Controller
         $data = request()->validate([
             'title'=> 'string',
             'image'=> 'file',
-            'direction'=> 'string',
         ]);
         if (request()->hasFile('image')) {
             $path = request()->file('image')->store('lesson', 'public');
             $data['image'] = $path;
         }
+        $teachers = request('teachers');
         $lesson->update($data);
+        $lesson->teachers()->sync($teachers);
         return redirect()->route('admin.lesson.index', $lesson->id);
     }
 }

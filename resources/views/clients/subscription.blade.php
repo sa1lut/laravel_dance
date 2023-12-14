@@ -4,24 +4,21 @@
 @section('content')
 <main class="main">
     <div class="container">
-        <table class="table table-bordered table-hover">
-            <thead>
-            <tr>
-                <th>Дата оплаты</th>
-                <th>Дата окончания</th>
-                <th>Дата окончания</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="card-group">
             @for($i = 0; $i < count($clients); $i++)
-                <tr data-widget="expandable-table" aria-expanded="false">
-                    <td>{{ $subscriptions[$i]->title }}</td>
-                    <td>{{ $clients[$i]->date_purchase }}</td>
-                    <td>{{ $clients[$i]->date_end }}</td>
-                </tr>
+                <div class="card mx-1">
+                    <img src="{{ $lessons[$i]->image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $subscriptions[$i]->title }}</h5>
+                            <p class="card-text">Направление: {{ $lessons[$i]->title }}</p>
+                            <p class="card-text">Дата окончания: {{ $clients[$i]->date_end }}</p>
+                        </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Дата покупки: {{ $clients[$i]->date_purchase }}</small>
+                    </div>
+                </div>
             @endfor
-            </tbody>
-        </table>
+        </div>
     </div>
 </main>
 @endsection

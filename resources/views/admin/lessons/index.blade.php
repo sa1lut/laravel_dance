@@ -17,7 +17,6 @@
                     <tr>
                       <th>id</th>
                       <th>Название</th>
-                      <th>Направление</th>
                       <th>Действия</th>
                     </tr>
                   </thead>
@@ -26,7 +25,6 @@
                         <tr data-widget="expandable-table" aria-expanded="false">
                             <td>{{ $lesson->id }}</td>
                             <td>{{ $lesson->title }}</td>
-                            <td>{{ $lesson->direction }}</td>
                             <td><a href="{{ route('admin.lesson.edit', $lesson->id) }}" class="card-link">Изменить</a></td>
                         </tr>
                         <tr class="expandable-body">
