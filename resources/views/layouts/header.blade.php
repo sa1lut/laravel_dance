@@ -36,7 +36,4 @@
                 </ul>
             </div>
         @endauth
-        <!-- <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2"><a href="../login.php">Войти</a></button>
-        </div> -->
 </header>

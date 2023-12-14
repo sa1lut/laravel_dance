@@ -9,8 +9,8 @@
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="{{ route('main.index') }}" class="nav-link px-2 text-body-secondary">Главная</a></li>
       <li class="nav-item"><a href="{{ route('lesson.index') }}" class="nav-link px-2 text-body-secondary">Занятия</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Мероприятия</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">О нас</a></li>
+      <li class="nav-item"><a href="{{ route('contact.index') }}" class="nav-link px-2 text-body-secondary">Контакты</a></li>
+      <li class="nav-item"><a href="{{ route('about.index') }}" class="nav-link px-2 text-body-secondary">О нас</a></li>
     </ul>
   </footer>
 </div>

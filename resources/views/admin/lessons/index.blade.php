@@ -17,6 +17,7 @@
                     <tr>
                       <th>id</th>
                       <th>Название</th>
+                      <th>Преподаватели</th>
                       <th>Действия</th>
                     </tr>
                   </thead>
@@ -25,6 +26,11 @@
                         <tr data-widget="expandable-table" aria-expanded="false">
                             <td>{{ $lesson->id }}</td>
                             <td>{{ $lesson->title }}</td>
+                            <td>
+                              @foreach($lesson->teachers as $teacher)
+                                {{ $teacher->surname }}, {{ $teacher->name }};
+                              @endforeach
+                            </td>
                             <td><a href="{{ route('admin.lesson.edit', $lesson->id) }}" class="card-link">Изменить</a></td>
                         </tr>
                         <tr class="expandable-body">

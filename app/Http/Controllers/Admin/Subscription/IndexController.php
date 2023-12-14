@@ -11,6 +11,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         $subscriptions = Subscription::all();
+        // dd($subscriptions->lessons);
         return view('admin.subscriptions.index', compact('subscriptions'));
     }
 }

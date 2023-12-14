@@ -19,7 +19,7 @@
                       <th>Название</th>
                       <th>Цена</th>
                       <th>Период</th>
-                      <th>Количество</th>
+                      <th>Занятия</th>
                       <th>Действия</th>
                     </tr>
                   </thead>
@@ -30,11 +30,11 @@
                             <td>{{ $subscription->title }}</td>
                             <td>{{ $subscription->price }}</td>
                             <td>{{ $subscription->period }}</td>
-                            <td>{{ $subscription->count }}</td>
+                            <td>{{ $subscription->lessons->title }}</td>
                             <td><a href="{{ route('admin.subscription.edit', $subscription->id) }}" class="card-link">Изменить</a></td>
                         </tr>
                         <tr class="expandable-body">
-                          <td colspan="5">
+                          <td colspan="6">
                             <p>
                                 {{ $subscription->description }}
                             </p>
