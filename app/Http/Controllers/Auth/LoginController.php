@@ -28,6 +28,8 @@ class LoginController extends Controller
             
             return redirect()->intended(route('main.index'));
         }
-        return view('auth.login');
+        return redirect(route('auth.login'))->withErrors([
+            'formError' => 'Неправильный логин или пароль'
+        ]);;
     }
 }

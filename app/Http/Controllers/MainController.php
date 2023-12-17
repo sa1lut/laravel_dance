@@ -10,8 +10,9 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function __invoke() {
-        $lessons = Lesson::all();
+        $lessons = Lesson::inRandomOrder()->get();
         $lessons = $lessons->splice(0, 3);
+        // dd($lessons);
         return view('main', compact('lessons'));
     }
 

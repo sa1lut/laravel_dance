@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClientRequest;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Client;
@@ -14,27 +16,31 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function register(Request $request) {
+    public function register(UserRequest $userRequest, ClientRequest $clientRequest) {
         if (Auth::check()) {
             return redirect(route('main.index'));
         }
-        $user = $request->validate([
-            'login'=> 'string',
-            'password'=> 'string',
-        ]);
-        $user['password'] = bcrypt($user['password']);
-        $user = User::create($user);
+        $userData = $userRequest->only(['login', 'password']);
         
 
-        $client = $request->validate([
-            'name'=> 'string',
-            'surname'=> 'string',
-            'birthday'=> 'string',
-            'telephone'=> 'string',
-            'user_id' => ''
-        ]);
-        $client['user_id'] = $user->id;
-        $client = Client::create($client);
+        // $user = $request->validate([
+        //     'login'=> 'string',
+        //     'password'=> 'string',
+        // ]);
+        $userData['password'] = bcrypt($userData['password']);
+        $user= User::create($userData);
+        // dd($user);
+
+        // $client = $request->validate([
+        //     'name'=> 'string',
+        //     'surname'=> 'string',
+        //     'birthday'=> 'string',
+        //     'telephone'=> 'string',
+        //     'user_id' => ''
+        // ]);
+        $clientData = $userRequest->only(['surname', 'name', 'birthday', 'telephone']);
+        $clientData['user_id'] = $user->id;
+        $client = Client::create($clientData);
 
         Auth::login($user);
         

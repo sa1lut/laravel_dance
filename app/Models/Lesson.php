@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Lesson extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $guarded = [];  
 
     public function teachers()

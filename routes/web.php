@@ -59,6 +59,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'admi
         Route::get('/subscriptions/{subscription}/edit', 'EditController')->name('admin.subscription.edit');
         Route::patch('/subscriptions/{subscription}', 'UpdateController')->name('admin.subscription.update');
     });
+    Route::group(['namespace' => 'ClientSubscription'], function() {
+        Route::get('/clientSubscription', 'IndexController')->name('admin.clientsubscription.index');
+        Route::get('/clientSubscription/{clientSubscription}/edit', 'EditController')->name('admin.clientsubscription.edit');
+        Route::patch('/clientSubscription/{clientSubscription}', 'UpdateController')->name('admin.clientsubscription.update');
+    });
 });
 
 Route::group(['namespace' => 'Lesson'], function() {

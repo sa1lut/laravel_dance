@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('login', 50)->unique();
+            $table->string('login', 25)->unique();
             $table->string('password', 255);
-            $table->timestamps();
             $table->unsignedBigInteger('role_id')->default(2);
 
             $table->index('role_id', 'user_role_idx');

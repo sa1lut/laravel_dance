@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 </head>
-<body>
+<body data-bs-theme="dark">
 <div class="wrapper">
     @include('layouts.header')
     @yield('content')

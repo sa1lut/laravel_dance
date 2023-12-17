@@ -41,8 +41,14 @@
             </div>
             <!-- /.card -->
           </div>
+          @if(!$clients->isEmpty())
+          <div class="">{{ $clients->links() }}</div>
+            
+          @endif
         </div>
         <!-- /.row -->
+        
     </div>
+    
 </main>
 @endsection

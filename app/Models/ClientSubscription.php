@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class ClientSubscription extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $guarded = [];  
 
     public function clients()
     {
-        return $this->belongsToMany(Client::class, 'client_subscriptions', 'client_id', 'subscription_id');
+        return $this->belongsTo(Client::class, 'client_id', 'id');
     }
 
     public function subscriptions()
     {
-        return $this->belongsToMany(Subscription::class, 'client_subscriptions', 'subscription_id', 'client_id');
+        return $this->belongsTo(Subscription::class, 'subscription_id', 'id');
     }
 }

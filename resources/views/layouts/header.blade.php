@@ -1,6 +1,7 @@
+
 <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="mb-2 mb-md-0">
-            <a href="{{ route('main.index') }}" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <a href="{{ route('main.index') }}" class="d-inline-flex link-body-emphasis text-decoration-none mx-5">
                 <img src="{{ asset('img/main/logo.png') }}">
             </a>
         </div>
@@ -8,13 +9,13 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{{ route('main.index') }}" class="nav-link px-2">Главная</a></li>
             <li><a href="{{ route('lesson.index') }}" class="nav-link px-2">Занятия</a></li>
-            <li><a href="{{ route('contact.index') }}" class="nav-link px-2">Контакты</a></li>
-            <li><a href="{{ route('about.index') }}" class="nav-link px-2">О нас</a></li>
+            <li><a href="{{ route('main.index') }}#contact" class="nav-link px-2">Контакты</a></li>
+            <li><a href="{{ route('main.index') }}#about" class="nav-link px-2">О нас</a></li>
         </ul>
 
         @guest
             <a href="{{ route('auth.login') }}">
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-outline-primary mx-5">
                     Вход
                 </button>
             </a>

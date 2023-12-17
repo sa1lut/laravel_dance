@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->date('date_purchase')->useCurrent();
             $table->date('date_end');
+            $table->unsignedBigInteger('status')->default(1);
 
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('subscription_id');
@@ -26,8 +27,6 @@ return new class extends Migration
             $table->foreign('client_id', 'client_subscriptions_client_idx')->on('clients')->references('id')->onDelete('cascade');
             $table->foreign('subscription_id', 'lesson_teacher_subscription_idx')->on('subscriptions')->references('id')->onDelete('cascade');
             
-
-            $table->timestamps();
         });
     }
 

@@ -17,6 +17,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('admin.subscription.index') }}" class="nav-link">Абонементы</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('admin.clientsubscription.index') }}" class="nav-link">Клиенты с абонементами</a>
+      </li>
     </ul>
 </nav>
 <!-- /.navbar -->

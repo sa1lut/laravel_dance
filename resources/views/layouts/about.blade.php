@@ -8,11 +8,11 @@
         
         <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-            <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+            <h2 class="featurette-heading fw-normal lh-1">История танца</h2>
+            <p class="lead">С самых ранних моментов известной человеческой истории танец сопровождал древние ритуалы, духовные собрания и общественные мероприятия. Будучи проводником транса, духовной силы, удовольствия, выражения, исполнения и взаимодействия, танец проник в нашу природу с самых ранних моментов нашего существования – с момента, когда первые африканские племена покрыли себя военными красками, музыка и танцы распространились во все четыре уголка мира. Без сомнения, танец остаются одной из самых выразительных форм общения, которые нам известны.</p>
         </div>
         <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            <img src="{{asset('img/about/about-1.jpg')}}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
         </div>
 
@@ -20,11 +20,11 @@
 
         <div class="row featurette">
         <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-            <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+            <h2 class="featurette-heading fw-normal lh-1">Наша команда</h2>
+            <p class="lead">Наших инструкторов объединяет не только профессионализм, но и искренняя страсть к танцам. У каждого из них есть своя уникальная история, связанная с танцами. <br><br>Наша команда предлагает множество возможностей для обучения различным стилям танцев. Мы воплощаем индивидуальный подход к каждому ученику, стремясь разбудить в них страсть к танцам и помочь им раскрыть свой творческий потенциал.</p>
         </div>
         <div class="col-md-5 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            <img src="{{asset('img/about/about-2.jpg')}}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
         </div>
 
@@ -32,11 +32,15 @@
 
         <div class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-            <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+            <h2 class="featurette-heading fw-normal lh-1">Наши ценности</h2>
+            <p class="lead">1. Индивидуальность: Мы ценим уникальность каждого ученика и стремимся создать приветливую и поддерживающую обстановку, где каждый может по-своему раскрыть свой потенциал и выразить себя через танец.<br><br>
+
+                            2. Профессионализм: Мы вкладываем важность в качество обучения и предоставляем только лучшие занятия, которые вдохновляют и помогают нашим ученикам развиваться как танцоры.<br><br>
+
+                            3. Творчество: Мы поощряем творческое мышление и исследование различных стилей танцев, поскольку считаем, что это ключевой элемент в развитии как танцоров, так и личностей.</p>
         </div>
         <div class="col-md-5">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+            <img src="{{asset('img/about/about-3.jpg')}}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
         </div>
 

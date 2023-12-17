@@ -9,24 +9,55 @@
             @csrf
             @method('patch')
             <div class="col-md-6">
-                <label for="surname" class="form-label">Фамилия</label>
-                <input type="text" class="form-control" id="surname" name="surname" value="{{ $subscription->name }}" placeholder="Фамилия">
+                <label for="title" class="form-label">Название</label>
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Название" value="{{ $subscription->title }}">
+                @error('title')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-md-6">
-                <label for="name" class="form-label">Имя</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $subscription->surname }}" placeholder="Имя">
+                <label for="price" class="form-label">Цена</label>
+                <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Цена" value="{{ $subscription->price }}">
+                @error('price')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-md-6">
-                <label for="birthday" class="form-label">Дата рождения</label>
-                <input type="date" class="form-control" id="birthday" name="birthday" value="{{ $teacher->birthday }}" placeholder="Дата рождения">
+                <label for="period" class="form-label">Период</label>
+                <input type="text" class="form-control @error('period') is-invalid @enderror" id="period" name="period" placeholder="Период" value="{{ $subscription->period }}">
+                @error('period')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="col-md-6">
-                <label for="image" class="form-label">Изображение</label>
-                <input type="file" class="form-control" id="image" name="image" value="{{ $teacher->image }}" placeholder="Изображение">
+                <label for="count" class="form-label">Количество</label>
+                <input type="text" class="form-control @error('count') is-invalid @enderror" id="count" name="count" placeholder="Количество" value="{{ $subscription->count }}">
+                @error('count')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
-            <div class="col-6">
-                <label for="telephone" class="form-label">Телефон</label>
-                <input class="form-control" id="telephone" name="telephone" value="{{ $teacher->telephone }}" placeholder="Телефон">
+            <div class="form-group">
+                  <label>Занятие</label>
+                  <select class="form-control select2bs4 @error('lesson_id') is-invalid @enderror" style="width: 100%;" name="lesson_id">
+                    @foreach($lessons as $lesson)
+                        <option
+                        @foreach($lesson->subscriptions as $lessonSubscription)
+                            {{ $lesson->id === $lessonSubscription->id ? 'selected' : ''}}
+                        @endforeach
+                        value="{{ $lesson->id}}">{{ $lesson->title }}</option>
+                    @endforeach
+                  </select>
+                  @error('lesson_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
+                </div>
+                <!-- /.form-group -->
+            <div class="col-12">
+                <label for="description" class="form-label">Описание</label>
+                <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" placeholder="Описание">{{ $subscription->description }}</textarea>
+                @error('description')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             
             <div class="col-12">

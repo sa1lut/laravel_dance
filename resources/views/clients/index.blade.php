@@ -7,6 +7,18 @@
     <div class="container">
         <div class="row g-3">
             <div class="col-md-6">
+                <label for="login" class="form-label">Логин</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="login" name="login" value="{{ $client->user->login}}" placeholder="Логин" disabled readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="password" class="form-label">Пароль</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" name="password"  placeholder="Пароль" value="{{ $client->user->password }}" disabled readonly>
+                </div>
+            </div>
+            <div class="col-md-6">
                 <label for="surname" class="form-label">Фамилия</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="surname" name="surname" value="{{ $client->surname}}" placeholder="Фамилия" disabled readonly>
