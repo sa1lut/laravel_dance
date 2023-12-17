@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {
-    public function __invoke(ClientSubscription $clientSubscription, ClientRequest $clientRequest)
+    public function __invoke(ClientSubscription $clientSubscription, Request $request)
     {
         // $data = request()->validate([
         //     'name'=> 'string',
@@ -20,8 +20,8 @@ class UpdateController extends Controller
         //     'telephone'=> 'string',
         // ]);
         
-        dd(211);
-        $clientSubscription->update($clientRequest->all());
+        // dd($request['status']);
+        $clientSubscription->update($request->all());
         return redirect()->route('admin.clientsubscription.index');
     }
 }

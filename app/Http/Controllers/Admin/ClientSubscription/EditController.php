@@ -11,12 +11,8 @@ class EditController extends Controller
 {
     public function __invoke(ClientSubscription $clientSubscription)
     {
-        $statuses = [
-            0 => 'Отменен',
-            1 => 'Забронирован',
-            2 => 'Оплачен',
-        ];
+        
         // dd($client->users);
-        return view('admin.clientsubscription.edit', compact('clientSubscription', 'statuses'));
+        return view('admin.clientsubscription.edit', compact('clientSubscription'));
     }
 }

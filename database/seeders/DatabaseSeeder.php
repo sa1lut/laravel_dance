@@ -40,26 +40,65 @@ class DatabaseSeeder extends Seeder
         //     'role_id' => 2
         // ]);
         \App\Models\Teacher::factory()->create([
-            'name' => 'petya',
-            'surname' => 'pupkin',
+            'name' => 'Андрей',
+            'surname' => 'Мазалов',
             'birthday' => '2000-06-06',
-            'telephone' => '1234567890',
+            'telephone' => '81234567890',
+        ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'Анастасия',
+            'surname' => 'Машкова',
+            'birthday' => '2000-06-06',
+            'telephone' => '81234567890',
+        ]);
+        \App\Models\Teacher::factory()->create([
+            'name' => 'Любовь',
+            'surname' => 'Нибулина',
+            'birthday' => '2000-06-06',
+            'telephone' => '81234567890',
         ]);
         \App\Models\Lesson::factory()->create([
-            'title' => 'Народный',
+            'title' => 'Танцы разных народов',
+            'image' => '',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Классический танец',
+            'image' => '',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Русский народный танец',
+            'image' => '',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Танец Сальса',
+            'image' => '',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Балет',
+            'image' => '',
+        ]);
+        \App\Models\Lesson::factory()->create([
+            'title' => 'Растяжка',
             'image' => '',
         ]);
         \App\Models\Subscription::factory()->create([
             'title' => 'Для начинающих',
-            'price' => 1000,
-            'period' => 3,
-            'description' => 'Подходит для людей без опыта или которые хотят стать танцорами',
+            'price' => 2500,
+            'period' => 6,
+            'description' => 'Будете изучать базовые упражнения, но благодаря этому вы познаете танец',
             'lesson_id' => 1,
         ]);
         \App\Models\Subscription::factory()->create([
-            'title' => 'Для начинающих2',
-            'price' => 1000,
-            'period' => 3,
+            'title' => 'Занятия в группе',
+            'price' => 2000,
+            'period' => 6,
+            'description' => 'Подходят для людей, которые хотят выйти из зоны комфорта. Будете работать в парах.',
+            'lesson_id' => 1,
+        ]);
+        \App\Models\Subscription::factory()->create([
+            'title' => 'Индивидуальные',
+            'price' => 5000,
+            'period' => 6,
             'description' => 'Подходит для людей без опыта или которые хотят стать танцорами',
             'lesson_id' => 1,
         ]);
@@ -80,9 +119,9 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Client::factory()->create([
             'name' => 'Александр',
-            'surname' => 'pupkin',
+            'surname' => 'Тестовый',
             'birthday' => '2000-06-06',
-            'telephone' => '1234567890',
+            'telephone' => '81234567890',
             'user_id' => 2,
         ]);
     }

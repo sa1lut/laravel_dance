@@ -9,33 +9,26 @@ use App\Models\ClientSubscription;
 use App\Models\Subscription;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StoreBuyController extends Controller
 {
-    public function __invoke(Subscription $subscription)
+    public function __invoke(Subscription $subscription, Request $request)
     {
-        $data = request()->validate([
-            'subscription_id' => 'integer',
-            'client_id' => 'integer',
-            'date_purchase' => 'date',
-            'date_end' => 'date'
-        ]);
+        if (!Auth::check()){
+            return redirect()->route('main.index');
+        }
         $clientSubscription = $subscription->clientSubscriptions;
-        // dd($subscription);
-        if ($clientSubscription->value('subscription_id') !== $data['subscription_id'] && $data['date_end'] > $clientSubscription->value('date_end')){
-            // if ($data['date_end'] <= $clientSubscription->value('date_end')) {
-            //     $data['date_end'] = date($data['date_end'])->date_modify('+' . $subscription->period . 'month');
-            //     dd($data['date_end']);
-            // }
-            $client = (ClientSubscription::create($data)['client_id']);
+        if ($clientSubscription->value('subscription_id') !== $request['subscription_id'] && $request['date_end'] > $clientSubscription->value('date_end'))
+        {
+
+            unset($request['lesson_id']);
+            $client = (ClientSubscription::create($request->all())['client_id']);
         
             return redirect()->route('clients.subscription', compact('client'));
-            
-            // dd($data); 
         }
         
-        $client = $data['client_id'];
-            return redirect()->route('clients.subscription', compact('client'));
-        
+        $client = $request['client_id'];
+        return redirect()->route('clients.subscription', compact('client'));
     }
 }

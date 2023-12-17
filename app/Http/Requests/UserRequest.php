@@ -21,10 +21,17 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        $rules =  [
             'login' => ['required', 'string', 'max:25', 'unique:users'],
             'password' => ['required', 'string', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:64'],
         ];
+
+        if ($this->route()->named('client.update')) {
+            $rules['login'] = ['required', 'string', 'max:25', 'unique:users,login,' . $this->client->user->id ];
+            $rules['password'] = ['nullable','string', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:64'];
+        }
+
+        return $rules;
     }
 
     public function messages(): array {

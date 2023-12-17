@@ -27,11 +27,13 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h5 class="card-title mb-2">{{ $subscription->title }}</h5>
-                                <p class="card-text pricing-card-title">{{ $subscription->price }} ₽</p>
-                                <p class="card-text">{{ $subscription->period }}/месяц</p>
+                                <p class="card-text pricing-card-title">Цена: {{ $subscription->price }} ₽</p>
+                                <p class="card-text">Длительность: {{ $subscription->period }} месяцев</p>
+                                <p class="card-text">Число посещений: {{ $subscription->count }}</p>
+                                <p class="card-text">Описание: {{ $subscription->description }}</p>
                             </div>
                             <div class="card-footer">
-                                <a href="{{ route('create.buy', [$lesson->id, $subscription->id]) }}" class="w-100 btn btn-lg btn-primary">Добавить</a>
+                                <a href="{{ route('create.buy', [$lesson->id, $subscription->id]) }}" class="w-100 btn btn-lg btn-primary">Приобрести</a>
                             </div>
                         </div>
                     </div>

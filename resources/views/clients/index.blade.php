@@ -15,7 +15,7 @@
             <div class="col-md-6">
                 <label for="password" class="form-label">Пароль</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="password" name="password"  placeholder="Пароль" value="{{ $client->user->password }}" disabled readonly>
+                    <input type="password" class="form-control" id="password" name="password"  placeholder="Пароль" value="********" disabled readonly>
                 </div>
             </div>
             <div class="col-md-6">

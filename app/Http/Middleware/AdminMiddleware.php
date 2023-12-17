@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Models\Role;
-
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
@@ -17,6 +17,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!Auth::check()){
+            return redirect()->route('main.index');
+        }
         if (auth()->user()->role->title !== 'admin'){
             return redirect()->route('main.index');
         };

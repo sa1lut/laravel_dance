@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label>Статус</label>
                 <select class="form-control" style="width: 100%;" name="status">
-                @foreach($statuses as $statusId => $statusTitle)
+                @foreach(STATUSES as $statusId => $statusTitle)
                     <option value="{{ $statusId }}" @if($clientSubscription->status === $statusId) selected @endif>{{ $statusTitle }}</option>
                 @endforeach
                 </select>
@@ -28,7 +28,6 @@
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Изменить</button>
             </div>
-            <a href="{{ route('admin.clientsubscription.update', $clientSubscription->id) }}">sadfasdf</a>
         </form>
     </div>
 </main>
